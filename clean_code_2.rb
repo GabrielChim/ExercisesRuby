@@ -1,7 +1,6 @@
 def longname
   name = fullname
-  return name unless organization_id
-  organization = Organization.lookup(id: organization_id)
-  return name unless organization
+  return unless organization_id
+  return unless Organization.lookup(id: organization_id)
   name += "(#{organization.name})"
 end
