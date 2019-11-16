@@ -4,13 +4,11 @@ require 'json'
 require 'stringio'
 
 # Complete the birthday function below.
-def birthday(arr, expected_sum, length)
-  new_list = arr.each_cons(length).to_a
+def birthday(list_numbers, expected_sum, length)
+  new_list = list_numbers.each_cons(length).to_a
   sum_result = 0
   new_list.each do |item|
-    if item.reduce(:+).eql?(expected_sum)
-      sum_result += 1
-    end
+     sum_result += 1 if item.reduce(:+).eql?(expected_sum)
   end
   sum_result
 end
