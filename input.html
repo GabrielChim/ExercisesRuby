@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <input id="text-container" type="text">
+      <input type="button" value="Enviar" onclick="setText()">
+    </p>
+    <h2 id="response-container"></h2>
+    <script>
+      function setText() {
+        const value = document.getElementById("text-container").value;
+        const showResponse = document.getElementById("response-container");
+        showResponse.innerHTML = value
+      }
+    </script>
+  </body>
+</html>
