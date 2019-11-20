@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      Valor 1: <input type="text" id="number-one">
+      Valor 2: <input type="text" id="number-two">
+    </div>
+    <input type="button" value="Sumar" onclick="operations('addition')">
+    <input type="button" value="Restar" onclick="operations('subtraction')">
+    <input type="button" value="Multiplicar" onclick="operations('multiplication')">
+    <input type="button" value="Dividir" onclick="operations('division')">
+
+    <p id="operations-container">0</p>
+
+    <script>
+      function operations(operation) {
+        let numberOne = document.getElementById("number-one").value;
+        let numberTwo = document.getElementById("number-two").value;
+        const operations = document.getElementById("operations-container");
+
+        if(isNumber(numberOne) || isNumber(numberTwo)) return operations.innerHTML = "Valores inválidos";
+
+        numberOne = parseFloat(numberOne);
+        numberTwo = parseFloat(numberTwo);
+        operations.innerHTML = ( () => {
+          switch (operation) {
+            case 'addition': return numberOne + numberTwo;
+            case 'subtraction': return numberOne - numberTwo;
+            case 'multiplication': return numberOne * numberTwo;
+            case 'division': return numberOne / numberTwo;
+          } 
+        })();
+      }
+
+      function isNumber(number) {
+        if(number == "") return true;
+        return isNaN(number);  
+      }
+    </script>
+  </body>
+</html>
