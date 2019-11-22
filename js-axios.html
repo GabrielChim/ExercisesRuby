@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Basic Table</h2>
+      <p>The .table class adds basic styling (light padding and only horizontal dividers) to a table:</p>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Movie Name</th>
+            <th>Year</th>
+            <th>Actors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="title">BLAH</td>
+            <td id="year">BLAH</td>
+            <td id="actors">BLAH</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script>
+      const type = "jim";
+      const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
+      
+      axios.get(queryURL, {
+        responseType: 'json'
+      }).then(function(response) {
+        const data = response.data
+        $('#title').text(data.Title);
+        $('#year').text(data.Year);
+        $('#actors').text(data.Actors);
+      })
+    </script>
+  </body>
+</html>
