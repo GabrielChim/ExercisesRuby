@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Avenir-next;
+  src: url("fonts/avenir next sv/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+body {
+  font-family: Avenir-next;
+  font-weight: 600;
+}
+a {
+  color: #8D7AFF;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container-head .img-homie {
+  height: 90px;
+  background-image: url(src/logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container-head .img-header {
+  height: 90px;
+  background-image: url(src/img_top.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.container-head .container-text {
+  text-align: center;
+  width: 80%;
+  height: 280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5px;
+}
+
+.container-head .container-text p {
+  color: #666666;
+}
+.container-head .container-text p:first-child {
+  font-size: 20px;
+}
+
+.container-head .container-text p:nth-child(2) {
+  line-height: 1.5;
+  margin-top: 10px;
+  font-size: 16px;
+  padding: 0 20px 0;
+}
+
+.btn-large {
+  background-color: white;
+  color: #8D7AFF;
+  padding: 2% 0;
+  width: 55%;
+  border-radius: 2px;
+  border: 1px solid #8D7AFF;
+  margin: 20px 0;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.container-images {
+  margin-top: 1%;
+}
+
+.img-section {
+  color: #434343;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 10%;
+  font-size: 16px;
+}
+
+.img-section img {
+  width: 600px;
+  height: 600px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 720px) {
+  .container-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 800px;
+  }
+
+  .img-section {
+    margin-bottom: 10px;
+  }
+
+  .img-section img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .container-head .container-text {
+    width: 800px;
+    padding: 2% 12%;
+  }
+}
