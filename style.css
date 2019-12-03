@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.container {
+  width: 100%;
+}
+
+.header {
+  background-image: url(header-mobile.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 0 35px 10px rgba(0, 0, 0, 0.2);  
+} 
+
+.header .header-login {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header .header-login div {
+  border: 1px solid white;
+  margin: 1% 3% 0 0;
+}
+
+.header .header-login a {
+  display: inline-block;
+  padding: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+.header .header-login a:first-child {
+  border-right: 1px solid white;
+}
+
+.header .header-form {
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 9% 0;
+}
+
+.header-form h2 {
+  color: white;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-form {
+  width: 100%;
+}
+
+.form-search {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.form-search input[type="text"] {
+  width: 80%;
+}
+
+.form-search input[type="text"],  
+.form-search select {
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+}
+
+.form-search select {
+  background-image: url(arrow.png);
+	background-repeat: no-repeat, repeat;
+	background-position: right .3em top 50%;
+  background-size: .9em;
+  width: 15%;
+  border-left: 1px solid #bcbcbc !important;
+}
+
+.form-search a {
+  background-color: #039be5;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.form-search select, 
+.d-none {
+  background-color: white;
+  color: #bcbcbc;
+  border: none;
+  padding: 10px;
+  display: none;
+  -moz-appearance: none;
+  vertical-align: middle;  
+}
+
+.header-form a {
+  color: white;
+}
+
+.first-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.first-section-flex {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 5%;
+  overflow: hidden;
+}
+
+.first-section-flex .width-3 {
+  margin-bottom: 20px;
+}
+
+.first-section-flex p {
+  font-size: 13px;
+}
+
+.second-section {
+  background-color:#F9F9F9;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.second-section div {
+  width: 100%;
+}
+
+.second-section .container-section {
+  width: 90%;
+  color: #4A4A4A;
+  margin-top: 30px;
+}
+
+.container-section .btn-more {
+  border: none;
+  background-color: #039be5;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+} 
+
+.container-section div h2 {
+  font-size: 28px;
+  margin: 10px 0 10px;
+}
+
+.container-section div p {
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.second-section .container-section div {
+  margin-bottom: 20px;
+ }
+
+.second-section .container-section div:last-child {
+  margin: 0;
+ }
+
+.first-section img, 
+.second-section img {
+  width: 200px;
+}
+
+.footer{
+  width: 100%;
+  height: 60px;
+  color: white;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 800px) {
+  .header {
+    background-image: url(header.jpg);
+    height: 400px;
+  } 
+  
+  .header-login, .header-form {
+    width: 90%;
+  }
+
+  .header .header-login {
+    margin: 0 auto;
+  }
+
+  .header .header-login div {
+    margin-top: 5px;
+  }
+
+  .header .header-form {
+    margin: auto;
+    width: 85%;
+    justify-content: space-around;
+    margin-top: 50px;
+    height: 50%;
+  }
+
+  .header-form h2 {
+    width: 100%;
+    margin: 0;
+    font-size: 34px;
+    padding: 0 50px;
+  }
+
+  .form-search input[type="text"] {
+    width: 40%;
+  }
+
+  .form-search input[type="checkbox"], 
+  .form-search select, 
+  .d-none {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .form-search a {
+    padding: 12px 20px;
+  }
+
+  .first-section-flex {
+    flex-direction: row;
+  } 
+
+  .first-section-flex .width-3 {
+    width: 33%;
+  }
+
+  .first-section .title {
+    font-size: 12px;
+  }
+
+  .first-section .title h2 {
+    margin-bottom: 30px;
+  }
+
+  .second-section .container-section {
+   width: 60%;
+  }
+
+  .container-section .btn-more {
+    width: 40%;
+  }
+
+  .container-section div {
+    width: 100%;
+  }
+
+  .container-section div p {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .second-section img {
+    width: 90%;
+  }
+}
