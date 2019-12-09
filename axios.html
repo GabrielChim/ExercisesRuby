@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Movies</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Buscador de peliculas</h2>
+      <hr>
+      <form action="">
+        <fieldset>
+          <legend>Formulario Películas</legend>
+          Nombre película: <input name='nombre' id="js-name-movie" type='text' tabindex='1' required>
+          <input type="submit" value="Buscar" onclick="movies()">
+        </fieldset>
+      </form>
+      <hr>
+      <h3 id="js-msg-error"></h3>
+      <table class="table" border="1" id="js-table">
+        <thead>
+          <tr>
+            <th>Movie Name</th>
+            <th>Year</th>
+            <th>Actors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="js-title"></td>
+            <td id="js-year"></td>
+            <td id="js-actors"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script>
+      function movies() {
+        const nameMovie = $("#js-name-movie").val();
+        const queryURL = "http://www.omdbapi.com/?t=" + nameMovie + "&y=&plot=short&apikey=40e9cece";
+        const errorMsg = $("#js-msg-error");
+        const title = $('#js-title');
+        const year = $('#js-year');
+        const actors = $('#js-actors');
+
+        axios.get(queryURL, {
+          responseType: 'json'
+        }).then(function(response) {
+          if(response.data.Response == "False") {
+            title.text("");
+            year.text("");
+            actors.text("");
+            errorMsg.show();
+            errorMsg.text("No se encontraron resultados");
+            return false;
+          }
+
+          errorMsg.hide();
+          const data = response.data
+          title.text(data.Title);
+          year.text(data.Year);
+          actors.text(data.Actors);
+        })
+      }
+    </script>
+  </body>
+</html>
