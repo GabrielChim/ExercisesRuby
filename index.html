@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Metodo de pago</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Elige tu forma de pago</h2>
+      <div class="container-pay">
+        <div class="head-pay">
+          <div>
+            <img src="checkbox.png" alt="">
+            <span> Tarjeta de crédito o débito</span>
+          </div>
+          <div>
+            <figure class="img-visa">
+              <img src="visa.png" class="normal js-card" id="js-visa" onclick="changeCard(event)">
+            </figure>
+            <figure>
+              <img src="mastercard.png" class="normal js-card" id="js-mastercard" onclick="changeCard(event)">
+            </figure>
+            <figure>
+              <img src="amex.png" class="normal js-card" id="js-amex" onclick="changeCard(event)">
+            </figure>
+          </div>
+        </div>
+        <div class="form-pay">
+          <form action="">
+            <div>
+              <p>Nombre completo</p>
+              <input type="text" class="text-large" placeholder="Nombre">
+            </div>
+            <div class="form-inline">
+              <div>
+                <p>Vigencia</p>
+                <input type="text"  class="text-small" placeholder="mm/aa">
+              </div>
+              <div>
+                <p>CVC</p>
+                <input type="text" class="text-small" placeholder="___">
+              </div>
+            </div>
+            <div>
+              <p>Número de Tarjeta</p>
+              <input type="text" class="text-large" placeholder="____________">
+            </div>
+            <div>
+              <p>Código postal</p>
+              <input type="text" class="text-small" placeholder="_____">
+            </div>
+          </form>
+          <div class="container-save-pay">
+            <div class="code-mastercard" id="js-code-mastercard">
+              <div>
+                <p>Tienes un código MasterCard? escribelo aquí</p>
+                <input type="text" class="text-large">
+              </div>
+              <p class="coupon">
+                Utiliza el código HOMIEMC al pagar con tu tarjeta MASTERCARD y recibe beneficios exclusivos
+              </p>
+            </div>
+            <div class="save-card">
+              <label class="container-check">
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <span>Guardar tarjeta en cuenta</span>
+            </div>
+            <div class="btn-pay" id="js-btn-pay">
+              <button>Pagar</button>
+              <p id="lower-commission">* Se cobrará el 2.65% por comisión</p>
+              <p id="higher-commission">* Se cobrará el 3.65% por comisión</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready( () => {
+        $("#js-code-mastercard").hide();
+        $("#js-btn-pay").hide();
+        $("#lower-commission").hide();
+        $("#higher-commission").hide();
+      }); 
+
+      function changeCard(event) {
+        const codeMastercard = $("#js-code-mastercard");
+        const lowerCommission = $("#lower-commission");
+        const higherCommission = $("#higher-commission");
+
+        codeMastercard.hide();
+        lowerCommission.hide();
+        higherCommission.hide();
+
+        document.querySelectorAll(".js-card").forEach( img => { 
+          if (img != event.target) $(img).removeClass("active");
+        });
+        
+        switch ($(event.target).attr("id")) {
+          case 'js-visa':
+            lowerCommission.show();
+            break;
+          case 'js-mastercard':
+            codeMastercard.show();
+            lowerCommission.show();
+            break;
+          case 'js-amex':
+            higherCommission.show();
+            break;
+        }
+
+        $("#js-btn-pay").show();
+        $(event.target).addClass("active");
+      }
+    </script>
+  </body>
+</html>

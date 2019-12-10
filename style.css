@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.container h2 {
+  font-size: 18px;
+  color: rgb(74, 74, 74);
+  font-weight: normal;
+  text-align: center;
+  margin: 30px 0 20px;
+}
+
+.container-pay {
+  width: 300px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+.container-pay .head-pay {
+  padding: 1%;
+}
+
+.container-pay .head-pay div:first-child {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
+.head-pay div:first-child span {
+  padding-left: 5px;
+  color: rgb(74, 74, 74);
+  font-size: 16px;
+}
+
+.container-pay .head-pay div:last-child {
+  display: flex;
+  overflow: hidden;
+}
+
+.head-pay div:last-child figure {
+  width: 33.3%;
+  padding: 6%;
+}
+
+.head-pay div:last-child figure img {
+  width: 100%;
+  border-width: 2px;
+  border-style: solid;
+  padding: 1px;
+  border-radius: 4px;
+}
+
+.normal {
+  border-color: rgb(204, 204, 204);
+}
+
+.active {
+  border-color: rgb(141, 122, 255);
+}
+
+.head-pay div:last-child figure img:hover {
+  cursor: pointer;
+}
+
+div:last-child .img-visa {
+  align-self: center;
+}
+
+.form-pay {
+  background-color: rgb(249, 249, 249);
+  padding: 5% 5% 1%;
+}
+
+.form-pay form div {
+  margin-bottom: 15px;
+}
+
+.form-pay div p {
+  font-size: 14px;
+  color: rgb(74, 74, 74);
+}
+
+.text-large, .text-small {
+  width: 100%;
+  border: 1px solid rgb(236, 236, 236);
+  padding: 9px;
+}
+
+.text-small {
+  width: 40%;
+}
+
+.form-pay .form-inline {
+  display: flex;
+
+}
+
+.form-inline .text-small {
+  width: 80%;
+}
+
+.container-save-pay div {
+  margin-bottom: 15px;
+}
+
+.container-save-pay div:last-child {
+  margin-bottom: 0;
+}
+
+.container-save-pay .code-mastercard {
+  margin-top: 30px;
+}
+
+.code-mastercard div p {
+  font-size: 0.8em;
+  color: rgb(74, 74, 74);
+}
+
+.code-mastercard .coupon {
+  font-size: 0.75em;
+  font-weight: bold;
+  text-align: center;
+  color: rgb(155, 155, 155);
+}
+
+.container-save-pay .save-card {
+  background-color: white;
+  padding: 9px;
+  text-align: center;
+  color: rgb(74, 74, 74);
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-check {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+.container-check input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border: 2px solid rgb(141, 122, 255);
+  border-radius: 2px;
+}
+
+.container-check input:checked + .checkmark {
+  background-color:rgb(141, 122, 255);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container-check input:checked + .checkmark:after {
+  display: block;
+}
+
+.container-check .checkmark:after {
+  left: 4px;
+  top: 0;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.container-save-pay .btn-pay button {
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  padding: 9px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 2px 0px;
+  color: white;
+  background-color: rgb(141, 122, 255);
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.container-save-pay .btn-pay p {
+  text-align: center;
+  color: rgb(155, 155, 155);
+}
