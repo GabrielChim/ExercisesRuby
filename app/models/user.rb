@@ -7,5 +7,7 @@ class User
   field :mobile_phone, type: String
   field :work_place, type: String
   
+  has_many :rents
+
   validates :email, :name, :last_name, :mobile_phone, :work_place, presence: true
 end

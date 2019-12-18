@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/dingxizheng/mongoid-enum.git
+  revision: d6677adb8a187bb8f6285cc84eaffa11aa51c24d
+  specs:
+    mongoid-enum (0.4.0)
+      mongoid
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -80,6 +87,12 @@ GEM
     execjs (2.7.0)
     factory_bot (5.1.1)
       activesupport (>= 4.2.0)
+    factory_bot_rails (5.1.1)
+      factory_bot (~> 5.1.0)
+      railties (>= 4.2.0)
+    faker (2.9.0)
+      i18n (>= 1.6, < 1.8)
+    ffaker (2.13.0)
     ffi (1.11.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -234,10 +247,13 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   database_cleaner
-  factory_bot
+  factory_bot_rails
+  faker
+  ffaker
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   mongoid
+  mongoid-enum!
   mongoid-rspec
   puma (~> 3.11)
   rails (~> 5.2.4)
