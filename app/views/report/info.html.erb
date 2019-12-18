@@ -1,0 +1,111 @@
+<div class="grid-container">
+  <div class="header">
+    <div class="containter-img-desktop">
+        <%= image_tag('homie_desktop.png', alt: 'Homie', class: 'homie-desktop') %>
+    </div>
+    <div class="container-images">
+      <%= image_tag('arrow_back', alt: 'back', class: 'arrow-back') %>
+      <%= image_tag('homie', alt: 'Homie', class: 'homie') %>
+      <%= image_tag('user', alt: 'Homie', class: 'user') %>
+    </div>
+    <div class="container-text">
+      <p class="title">Reporte de Inquilino</p>
+      <p class="date">Fecha: julio 16 2019 Valido hasta: octubre 16 2019</p>
+      <p class="description">Calculado con Homie Technology que tiene un rango de 0 a 1500</p>
+    </div> 
+  </div>
+  <div class="aside">
+    <div class="punctuation">
+      <div class="container-calification">
+        <%= image_tag('homie_circle', alt: 'Homie', class: 'circle') %>
+        <span>1052</span>
+      </div>
+      <div class="container-score">
+        <div class="range">
+          <span>0</span>
+          <span>1500</span>
+        </div>
+        <%= image_tag('homie_score', alt: 'Score', class: 'score') %>
+        <div class="details-range">
+          <p>Malo</p>
+          <p>Medio</p>
+          <p>Bueno</p>
+          <p>Excelente</p>
+        </div>
+      </div>
+      <div class="details">Este puntaje es Bueno</div>
+      <div class="text-punctuation"> Rango superior al 43% de los inquilinos de México</div>
+    </div>
+    <div class="tenant-data">
+      <p>Identificación Otorgada: <span>Verificada</span></p>
+      <p>Nivel Socieconomico: <span>NA</span></p>
+      <p>Listas negras: <span>No</span></p>
+      <p>Prevencion de lavado de dinero: <span>No disponible</span></p>
+      <p>Redes Sociales vinculadas: <span>Ninguna</span></p>
+    </div>
+  </div>
+  <div class="article">
+    <%= image_tag('user', alt: 'Homie', class: 'user-article') %>
+    <div class="user-data">
+      <p class="tenant-name">Esteban Manuel Lopez Ramirez</p>
+      <p class="tenant-direction">centro, 123, Piso 12, Depa 123, Centro, Yucatán</p>
+      <p class="class-rent">$44,000.00</p>
+    </div>
+  </div>
+  <div class="main">
+    <div>
+      <%= image_tag('job_icon', alt: 'Job', class: 'job-icon') %>
+      <p>/ <strong>Empleo</strong></p>
+    </div>
+    <div>
+      <%= image_tag('grade_icon', alt: 'Grade', class: 'grade-icon') %>
+      <p>Especialidad-o-diplomado / <strong>UTM</strong></p>
+    </div>
+    <div>
+      <%= image_tag('coins_icon', alt: 'Coins', class: 'coins-icon') %>
+      <p>Ingresos verificados <strong>No disponible</strong></p>
+    </div>
+    <div>
+      <%= image_tag('email_icon', alt: 'Email', class: 'email-icon') %>
+      <p><strong>dev+victor126inquilino@homie.mx</strong></p>
+    </div>
+    <div>
+      <%= image_tag('phone_icon', alt: 'Phone', class: 'phone-icon') %>
+      <p>9992023842</p>
+    </div>
+    <div>
+      <%= image_tag('people_icon', alt: 'People', class: 'people-icon') %>
+      <div class="container-reference">
+        <p>Referencia: <strong>Lorena Esther Manzanero Rodriguez</strong></p>
+        <p>centro, 123, Centro, Yucatán, CP 97000</p>
+      </div>
+    </div>
+    <div>
+      <%= image_tag('people_icon', alt: 'People', class: 'people-icon') %>
+      <div class="container-reference">
+        <p>Referencia: <strong>Catalina Esmeralda  Estrada Castro</strong></p>
+        <p>centro, 123, Petrolera, Veracruz, CP 96500</p>
+      </div>
+    </div>
+    <div>
+      <%= image_tag('people_icon', alt: 'People', class: 'people-icon') %>
+      <div class="container-reference">
+        <p>Referencia: <strong>Luis Manuel Castillo Lopez</strong></p>
+        <p>centro, 123, Centro, Yucatán, CP 97000</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container-footer">
+      <p>Nuestra tecnología nos permite rentar tu inmueble al <strong>mejor inquilino</strong>, sin <strong>ningún riesgo</strong> y en <strong>tiempo record.</strong></p>
+      <%= image_tag('validate.png', alt: 'Score', class: 'validate') %>
+    </div>
+  </div>
+  <%= 
+  button_tag(type: 'button') do
+    content_tag(:span, 'Guardar', class: 'glyphicon glyphicon-download-alt')
+  end 
+  %>
+</div>
+<%= stylesheet_link_tag    'report', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
