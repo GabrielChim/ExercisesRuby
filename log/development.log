@@ -6837,3 +6837,10 @@ Processing by ReportController#info as HTML
 Completed 200 OK in 24ms (Views: 23.3ms | MongoDB: 0.0ms)
 
 
+Started GET "/reports/info" for 127.0.0.1 at 2019-12-18 12:55:44 -0600
+Processing by ReportController#info as HTML
+  Rendering report/info.html.erb within layouts/report
+  Rendered report/info.html.erb within layouts/report (116.4ms)
+Completed 200 OK in 119ms (Views: 117.9ms | MongoDB: 0.0ms)
+
+
