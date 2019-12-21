@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Home, type: :model do
   let!(:home) { FactoryBot.create(:home) }
- 
+
   it "is valid with valid attributes" do
     expect(home).to be_valid
   end

@@ -16,6 +16,7 @@ class Home
   validates :price, :extra_service, :total_amount, :status, presence: true
 
   private
+  
   def set_total_amount
     self.total_amount = price + extra_service
   end
