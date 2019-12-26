@@ -3,11 +3,100 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <style>
-      /* Email styles need to be inline */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container-head .container-homie-email {
+        text-align: center;
+      }
+
+      .container-head .container-homie-thins {
+        width: 750px;
+      }
+
+      .container-homie-thins img {
+        width: 100%;
+      }
+
+      .container-head .container-text {
+        width: 750px;
+        padding: 2% 0%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+
+      .container-head .container-text p {
+        color: #666666;
+      }
+      .container-head .container-text .text-welcome {
+        font-size: 20px;
+        margin-bottom: 5px;
+      }
+
+      .container-head .container-text .principal-text {
+        line-height: 1.5;
+        margin-top: 10px;
+        font-size: 16px;
+        padding: 0 45px 0;
+      }
+
+      .principal-text a {
+        color: #8D7AFF;
+      }
+      
+      .btn-large {
+        background-color: white;
+        color: #8D7AFF;
+        padding: 1% 0;
+        width: 40%;
+        border-radius: 2px;
+        border: 1px solid #8D7AFF;
+        margin: 20px 0;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .container-images {
+        text-align: center;
+      }
+
+      .container-images div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container-images div img {
+        padding: 10px;
+      }
+
+      .container-more-advertisements {
+        text-align: center;
+        color: #666666;
+        margin: 15px auto;
+        font-size: 16px;
+      }
+
+      .container-button {
+        text-align: center;
+      }
     </style>
   </head>
 
-  <body>
+  <body class="container">
     <%= yield %>
   </body>
 </html>
