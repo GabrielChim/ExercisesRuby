@@ -10,7 +10,6 @@ const Gallery = () => {
     display: 'flex',
     justifyContent: 'center',
     alingItems: 'center',
-    border: '1px solid black',
     borderRadius: '5px'
   };
   return (

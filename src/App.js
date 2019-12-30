@@ -1,14 +1,9 @@
 import React from 'react';
-import './App.css';
-import Gallery from "./components/Gallery";
+import Periodicity from "./components/Periodicity"
 
 function App() {
   return (
-    <div>
-      <h1>Galería de imagenes</h1>
-      <hr />     
-      <Gallery />
-    </div>
+    <Periodicity />
   );
 }
 
