@@ -2,7 +2,6 @@ import * as actionTypes from '../constants/actionTypes';
 import ArticlesApi from '../api/articlesApi';
 
 export function addArticle(title, content) {
-  console.log('action');
   return {
     type: actionTypes.ADD_ARTICLE,
     title: title,

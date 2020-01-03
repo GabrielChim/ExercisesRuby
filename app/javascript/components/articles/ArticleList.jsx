@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import {connect} from 'react-redux'
 import { Link } from 'react-router-dom';
 import {addArticle, allArticles} from '../../actions/articles';
 
 function ArticleList(props) {
-
-  //componentDidMount() {
-  //  props.listArticles();
-  //}
+  useEffect(() => {
+    props.listArticles();
+  }, []);
 
   return (
     <div>
@@ -22,9 +21,7 @@ function ArticleList(props) {
           );
         })
       }
-      <button onClick={() => {
-        addArticle('Hola', 'Holi');
-        }} className="btn btn-outline-primary">Create Article</button>
+      <Link to="/articles/new" className="btn btn-outline-primary">Create New Article</Link>
     </div>
   );
 }

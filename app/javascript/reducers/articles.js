@@ -14,7 +14,6 @@ const articlesState = {
 function articlesReducer(state = articlesState, action) {
   switch (action.type){
     case ADD_ARTICLE:
-    console.log('reducers');
     return {
         article: [
         ...state.article,
@@ -30,7 +29,6 @@ function articlesReducer(state = articlesState, action) {
 
       };
     case INFO_ARTICLE:
-      console.log('asdasdasda');
       return {
         ...state,
         article: action.article

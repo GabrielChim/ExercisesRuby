@@ -1,11 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-class Menu extends Component {
-  constructor() {
-    super();
-  }
-  render(){
+function Menu() {
     return(
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <ul className="navbar-nav mr-auto">
@@ -14,7 +10,6 @@ class Menu extends Component {
         </ul>
       </nav>
     );
-  }
 }
 
 export default Menu;
