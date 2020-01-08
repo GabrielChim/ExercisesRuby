@@ -8,12 +8,14 @@ class Home
   field :extra_service, type: Float
   field :total_amount, type: Float
   field :home_features, type: Hash, default: {  garden: false, furnished: false, gym: false }
+  field :home_master_id, type: String, default: nil
+  field :location, type: Array
   enum :status, [:in_progress, :published, :rented]
 
   belongs_to :owner
   has_many :rents
 
-  validates :price, :extra_service, :total_amount, :status, presence: true
+  validates :price, :extra_service, :total_amount, :status, :location, presence: true
 
   private
   
