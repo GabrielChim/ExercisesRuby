@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 class ArticlesApi {
-  static getArticles() {
-    return axios.get('api/articles')
+   static getArticle(id){
+    return axios.get(`api/articles/${id}`)
       .then(response => {
         return response.data;
       })
@@ -11,14 +11,14 @@ class ArticlesApi {
       });
   }
 
-  static getArticle(id){
-    return axios.get(`api/articles/${id}`)
-      .then(response => {
-        return response.data;
-      })
-      .catch(error => {
-        return error;
-      });
+  static getArticlePagination(page = null, perPage = null){
+    return axios.get(`api/articles?page=${page}&per_page=${perPage}`)
+    .then(response => {
+      return response.data;
+    })
+    .catch(error => {
+      return error;
+    });
   }
 
   static updateArticle(article, id){

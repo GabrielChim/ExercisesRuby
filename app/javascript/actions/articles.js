@@ -41,17 +41,27 @@ export function removeArticle(id) {
 
 export function allArticles(){
   return function(dispatch){
-    return ArticlesApi.getArticles().then(articles => {
-      dispatch(successLoadArticles(articles));
+    return ArticlesApi.getArticles().then(response => {
+      dispatch(successLoadArticles(response));
     }).catch(error => {
       console.log('error', error)
     });
   }
 }
 
-export function successLoadArticles(articles) {
+export function articlesPagination(page = null, perPage = null) {
+  return function(dispatch){
+    return ArticlesApi.getArticlePagination(page, perPage).then(response => {
+      dispatch(successLoadArticles(response));
+    }).catch(error => {
+      console.log('error', error)
+    });
+  }
+}
+
+export function successLoadArticles(response) {
   return {
     type: actionTypes.ALL_ARTICLES,
-    articles
+    response
   };
 }

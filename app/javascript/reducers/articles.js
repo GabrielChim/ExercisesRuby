@@ -7,6 +7,8 @@ import {
 } from '../constants/actionTypes';
 
 const articlesState = {
+  total: 0,
+  articlesPerPage: 0,
   articles: [],
   article: {}
 };
@@ -16,7 +18,7 @@ function articlesReducer(state = articlesState, action) {
     case ADD_ARTICLE:
     return {
         article: [
-        ...state.article,
+        ...state,
         {
           id: 'fff',
           title: action.title,
@@ -40,8 +42,10 @@ function articlesReducer(state = articlesState, action) {
     case ALL_ARTICLES:
       return {
         ...state,
-        articles: action.articles
-      };
+        articles: action.response.articles,
+        total: action.response.total,
+        articlesPerPage: action.response.articles_per_page
+      }
     default:
       return state;
   }
