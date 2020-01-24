@@ -1,5 +1,8 @@
-class SimilarHome  
-  def self.list_similar_homes
+class Homes::SimilarHome  
+  include Interactor
+
+  def call
+    context.similar_homes = []
     ids_owners = Owner.pluck(:id)
     ids_homes_equals = []
     homes_equals = []
@@ -21,14 +24,15 @@ class SimilarHome
     ids_homes_equals.uniq.map do |id_home|
       id_home.map do |id|
         home = Home.find(id: id)
-        puts "#{home.owner.user.name} #{home.owner.user.last_name}," \
-              "#{home.owner.user.email},"  \
-              "#{home.id}," \
-              "#{home.home_master_id}," \
-              "#{home.total_amount}," \
-              "#{home.status}," \
-              "#{home.location}"
+        full_name = "#{home.owner.user.name} #{home.owner.user.last_name}"
+        context.similar_homes.push([full_name,
+          home.owner.user.email,
+          home.id,
+          home.total_amount,
+          home.status,
+          home.location])
       end
     end
+    context.similar_homes
   end
 end
